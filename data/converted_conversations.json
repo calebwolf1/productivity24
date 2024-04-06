@@ -35339,62 +35339,6 @@
             },
             {
                 "role": "user",
-                "content": "Hi, I have a query regarding my recent purchase of a hand blender from BrownBox."
-            },
-            {
-                "role": "user",
-                "content": "Sure, it's 123456789."
-            },
-            {
-                "role": "user",
-                "content": "I received my order yesterday, and I noticed that there were some hidden charges for the hand blender. I wasn't aware of these charges when I placed the order."
-            },
-            {
-                "role": "user",
-                "content": "Sure, take your time."
-            },
-            {
-                "role": "user",
-                "content": "I don't remember seeing any additional charges. Can you please check again?"
-            },
-            {
-                "role": "user",
-                "content": "Yes, please do that."
-            },
-            {
-                "role": "user",
-                "content": "Hi, I have a query regarding the hidden charges for my recent purchase of a hand blender."
-            },
-            {
-                "role": "user",
-                "content": "It's 123456789."
-            },
-            {
-                "role": "user",
-                "content": "Yes, that's correct. I wasn't aware of these charges when I placed the order."
-            },
-            {
-                "role": "user",
-                "content": "Thank you, I appreciate your help."
-            },
-            {
-                "role": "user",
-                "content": "No, that's all. Thank you for your help."
-            },
-            {
-                "role": "user",
-                "content": "You too, goodbye."
-            }
-        ]
-    },
-    {
-        "messages": [
-            {
-                "role": "system",
-                "content": "A polite chatbot that deals with e-commerce products."
-            },
-            {
-                "role": "user",
                 "content": "Hi, I'm trying to purchase a vacuum cleaner from your website, but I can't seem to find any information about international shipping. Can you help me with that?"
             },
             {
@@ -60304,54 +60248,6 @@
             {
                 "role": "assistant",
                 "content": "Goodbye!"
-            }
-        ]
-    },
-    {
-        "messages": [
-            {
-                "role": "system",
-                "content": "A polite chatbot that deals with e-commerce products."
-            },
-            {
-                "role": "user",
-                "content": "Hi, Jane. I received a dishwasher, but I'm having trouble installing it. Can you help me with that?"
-            },
-            {
-                "role": "user",
-                "content": "Yes, my order number is BB67890."
-            },
-            {
-                "role": "user",
-                "content": "The installation manual is not clear, and I'm not sure how to connect the water supply line."
-            },
-            {
-                "role": "user",
-                "content": "Yes, it is long enough. But I'm still not sure how to connect it."
-            },
-            {
-                "role": "user",
-                "content": "Okay, I'll try that. But what if it still doesn't work?"
-            },
-            {
-                "role": "user",
-                "content": "What? I already paid for the installation. Why should I pay extra for a technician?"
-            },
-            {
-                "role": "user",
-                "content": "Yes, please. That would be great."
-            },
-            {
-                "role": "user",
-                "content": "Okay, thank you."
-            },
-            {
-                "role": "user",
-                "content": "No, that's all for now."
-            },
-            {
-                "role": "user",
-                "content": "You too. Goodbye!"
             }
         ]
     },
