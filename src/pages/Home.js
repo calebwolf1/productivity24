@@ -1,7 +1,11 @@
+import Auth from "../components/Auth"
 
 const Home = () => {
   return (
-    <header>Hello home page!</header>
+    <div>
+      <header>Hello home page!</header>
+      <Auth />
+    </div>
   )
 }
 
