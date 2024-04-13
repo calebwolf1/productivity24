@@ -1,0 +1,92 @@
+.textfield{
+    width: 377px;
+    height: 50px;
+    flex-shrink: 0;
+    border-radius: 15px;
+    background: #1B1A1C;
+
+    color: #FFF;
+    font-family: "Space Grotesk", "Arial";
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+}
+
+.orgtextfield{
+    position: absolute;
+    top: 265px;
+    left: 840px;
+}
+
+.emailtextfield{
+    position: absolute;
+    top: 385px;
+    left: 840px;
+}
+
+.passwordtextfield{
+    position: absolute;
+    top: 505px;
+    left: 840px;
+}
+
+.gentext{
+    color: #FFF;
+    font-family: "Inter";
+    font-size: 15px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+}
+
+.orgtext{
+    position: absolute;
+    top: 240px;
+    left: 840px;
+}
+
+.emailtext{
+    position: absolute;
+    top: 360px;
+    left: 840px;
+}
+
+.passwordtext{
+    position: absolute;
+    top: 480px;
+    left: 840px;
+}
+
+.forgotpassword{
+    color: #FFF;
+    font-family: "Space Grotesk", "Arial";
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+
+    position: absolute;
+    top: 655px;
+    left: 965px;
+    text-align: center
+}
+
+.loginbutton{
+    border-radius: 30px;
+    background: #4C1CD4;
+    width: 377px;
+    height: 50px;
+    flex-shrink: 0;
+
+    color: #FFF;
+    font-family: "Space Grotesk", "Arial";
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+
+    position: absolute;
+    top: 600px;
+    left: 840px;
+}

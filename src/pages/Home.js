@@ -1,9 +1,12 @@
+import './Home.css';
+import '../Fonts.css';
 import Auth from "../components/Auth"
 
 const Home = () => {
   return (
     <div>
-      <header>Hello home page!</header>
+      <div className='welcome'>Send confidently, Whoosh</div>
+      <div className='login'>Login</div>
       <Auth />
     </div>
   )
