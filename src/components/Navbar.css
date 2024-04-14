@@ -1,0 +1,55 @@
+body {
+    margin: 0;
+    padding: 0;
+    font-family: "Space Grotesk";
+    background-color: #0F0E10;
+}
+  
+.container {
+    max-width: 1100px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+}
+
+.navbar {
+    height: 60px;
+    background-color: #0F0E10;
+    position: relative;
+}
+
+.logo {
+    height: 85%;
+    position: absolute;
+    left: 50px;
+    top: 10px;
+}
+
+.nav-elements {
+    position: absolute;
+    right: 50px;
+}
+
+.nav-elements ul {
+    display: flex;
+    justify-content: space-between;
+    list-style-type: none;
+    text-decoration: none;
+}
+
+.nav-elements ul li:not(:last-child) {
+    margin-right: 60px;
+}
+
+.nav-elements ul li:last-child {
+    margin-right: 0px;
+}
+
+.nav-elements ul a {
+    font-size: 16px;
+    font-weight: 400;
+    color: #FFF;
+    text-decoration: none;
+}
