@@ -2,6 +2,8 @@ import { useState } from "react"
 import { auth, db } from "../firebase-config"
 import { createUserWithEmailAndPassword, signInWithEmailAndPassword } from "firebase/auth"
 import { collection, doc, getDocs, query, where } from "firebase/firestore";
+import '../Fonts.css';
+import './Auth.css';
 
 const Auth = () => {
   const clientsRef = collection(db, "clients");
@@ -119,10 +121,11 @@ const Auth = () => {
     <div>
       <div>
         {/* TODO: Have a dropdown that lists all organizations matching the current pattern typed */}
-        <input
-          placeholder="Organization name"
+        <div className="gentext orgtext">Organization Name</div>
+        <input className="textfield orgtextfield"
+          //placeholder="Organization name"
           onChange={(e) => setClientName(e.target.value)} />
-        <button onClick={onSelectClient}>Select your organization</button>
+        {/* <button onClick={onSelectClient}>Select your organization</button> */}
       </div>
       {/* <div>
         <input 
@@ -130,27 +133,32 @@ const Auth = () => {
           onChange={(e) => setGroupName(e.target.value)} />
         <button onClick={onSelectGroup}>Select your group</button>
       </div> */}
-      <div>
-        <input 
-          placeholder="Email"
+      {/* <div>
+        <div className="gentext emailtext">Email</div>
+        <input className="textfield emailtextfield"
+          //placeholder="Email"
           onChange={(e) => setSignUpEmail(e.target.value)} />
-        <input 
-          placeholder="Password"
+        <div className="gentext passwordtext">Password</div>
+        <input
+          //placeholder="Password"
           type="password"
           onChange={(e) => setSignUpPassword(e.target.value)} />
         <button onClick={onSignUp}>Sign up</button>
-      </div>
+      </div> */}
       <div>
-      <input 
-        placeholder="Email"
-        onChange={(e) => setSignInEmail(e.target.value)} />
-      <input 
-        placeholder="Password"
-        type="password"
-        onChange={(e) => setSignInPassword(e.target.value)} />
-      <button onClick={onSignIn}>Sign in</button>
+        <div className="gentext emailtext">Email</div>
+        <input className="textfield emailtextfield"
+          //placeholder="Email"
+          onChange={(e) => setSignInEmail(e.target.value)} />
+        <div className="gentext passwordtext">Password</div>  
+        <input className="textfield passwordtextfield"
+          //placeholder="Password"
+          type="password"
+          onChange={(e) => setSignInPassword(e.target.value)} />
+        <button onClick={onSignIn} className="loginbutton">Login</button>
+        <div className="forgotpassword">Forgot password</div>
+      </div>
     </div>
-  </div>
   );
 };
 

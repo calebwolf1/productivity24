@@ -1,0 +1,63 @@
+html {background-color: #0F0E10}
+
+.App {
+  text-align: center;
+}
+
+.title{
+  color: #FFF;
+  font-family: "Space Grotesk";
+  font-size: 128px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+
+  position: absolute;
+  top: 200px;
+  width: 645px;
+  
+  position: relative;
+  left: 50%;
+  transform: translateX(-50%);
+
+}
+
+.paragraph{
+  color: #FFF;
+  text-align: center;
+  font-family: "Space Grotesk";
+  font-size: 30px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  width: 875px;
+
+  position: absolute;
+  top: 200px;
+
+  position: relative;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.tosignup{
+  color: #FFF;
+  text-align: center;
+  font-family: "Space Grotesk";
+  font-size: 30px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;  
+
+  border-radius: 15px;
+  background: linear-gradient(90deg, #5583FA 0%, #4C1CD4 96.25%);
+  width: 390px;
+  height: 85px;
+
+  position: absolute;
+  top: 250px;
+
+  position: relative;
+  left: 12.5%;
+  transform: translateX(-50%);
+}

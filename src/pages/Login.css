@@ -1,0 +1,61 @@
+html {
+  background-color: #0F0E10
+}
+
+.App {
+  text-align: center;
+}
+
+.box {
+  width: 540px;
+  aspect-ratio: 1;
+  background: linear-gradient(#4C68FC, #0F0E10);
+  position: relative;
+  z-index: 0;
+  transform: rotate(-90deg);
+  top: 200px;
+}
+
+.box:before {
+  content: "";
+  position: absolute;
+  z-index: -1;
+  inset: 0;
+  background: inherit; /* use the same gradient */
+  transform: rotate(-90deg); /* rotate it */
+  clip-path: polygon(100% 0, 100% 100%, 0 100%); /* show only half of the element */
+}
+
+.welcome{
+  color: #FFF;
+  font-family: "Space Grotesk", "Arial";
+  font-size: 24px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+
+  position: absolute;
+  top: 100px;
+  left: 840px;
+
+}
+
+.login{
+  color: #FFF;
+  font-family: "Inter", "Arial";
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: normal;
+
+  position: absolute;
+  top: 180px;
+  left: 840px;
+}
+
+.logo {
+  height: 50%;
+  position: absolute;
+  left: 200px;
+  top: 180px;
+}

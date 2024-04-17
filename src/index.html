@@ -123,11 +123,6 @@
       async function listMessages() {
         let response;
         try {
-          // response = await gapi.client.gmail.users.messages.list({
-          //   userId: 'me',
-          //   q: '!has:attachment',
-          //   maxResults: 10
-          // });
           response = await gapi.client.gmail.users.threads.list({
             userId: 'me',
             q: "!has:attachment",
@@ -138,11 +133,6 @@
           return;
         }
         const threads = response.result.threads;
-        // const messages = response.result.messages;
-        // if (!messages || messages.length == 0) {
-        //   document.getElementById('content').innerText = 'No Messages found.';
-        //   return;
-        // }
         if (!threads || threads.length == 0) {
           document.getElementById('content').innerText = 'No Threads found.';
           return;
@@ -184,8 +174,8 @@
                   decodedPart = atob( actualPart.replace(/-/g, '+').replace(/_/g, '/') ); 
                   subCountArr[j] = decodedPart;
                   //decodedMsgs[counterN] = decodedPart;
-                  //console.log(decodedMsgs[counterN]);
-                  // console.log(subCountArr[j]);
+                  console.log(actualPart);
+                  console.log(decodedPart);
                 }
               } catch (err) {
                   document.getElementById('content').innerText = err.message;
@@ -197,50 +187,12 @@
               counterN++;
             }
         }
-        console.log(decodedMsgs);
+        //console.log(decodedMsgs);
         // Flatten to string to display
         const output = threads.reduce(
             (str, threads) => `${str}${threads.id}\n`,
             'Messages:\n');
         document.getElementById('content').innerText = output;
-        // const output = messages.reduce(
-        //     (str, message) => `${str}${message.id}\n`,
-        //     'Messages:\n');
-        // document.getElementById('content').innerText = output;
-
-        //Get messages
-        // let decodedMsgs = [];
-        // for(i = 0; i < messages.length; i++) {
-        //     console.log(messages[i]["id"]);
-        //     let currentMsg = "";
-        //     try {
-        //       currentMsg = await gapi.client.gmail.users.messages.get({
-        //         userId: 'me',
-        //         id: messages[i]["id"]
-        //         // format: 'raw'
-        //       });
-        //       var parts = currentMsg.result.payload.parts;
-        //       var actualPart;
-        //       if(parts) {
-        //         for(j = 0; j < parts.length; j++) {
-        //         if(parts[j]["mimeType"] == 'text/plain') {
-        //           actualPart = parts[j]["body"]["data"];
-        //           }
-        //         }
-        //         decodedPart = atob( actualPart.replace(/-/g, '+').replace(/_/g, '/') ); 
-        //         decodedMsgs[i] = decodedPart;
-        //         console.log(currentMsg);
-        //       }
-        //     } catch (err) {
-        //         document.getElementById('content').innerText = err.message;
-        //         return;
-        //     }
-        // }
-
-        // const output2 = decodedMsgs.reduce(
-        //     (str, decodedPart) => `${str}${decodedPart}\n`,
-        //     'Decoded Messages:\n');
-        // document.getElementById('content').innerText = output2;
       }
     </script>
     <script async defer src="https://apis.google.com/js/api.js" onload="gapiLoaded()"></script>
