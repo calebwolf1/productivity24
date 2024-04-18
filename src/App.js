@@ -4,7 +4,7 @@ import { Routes, Route } from 'react-router-dom';
 import Home from './pages/Home';
 import Dashboard from './pages/Dashboard';
 import Login from './pages/Login';
-
+import UserUpload from './pages/UserUpload';
 
 function App() {
   return (
@@ -12,7 +12,10 @@ function App() {
       <Routes>
         <Route path='/' element={<Home/>} />
         <Route path='/login' element={<Login/>} />
-        <Route path='/dashboard' element={<Dashboard/>} />
+        {/* Admin dashboard */}
+        <Route path='/dashboard' element={<Dashboard/>} /> 
+        {/* User upload interface, FKA user dashboard */}
+        <Route path='/userUpload' element={<UserUpload/>} /> 
       </Routes>
     </div>
   );
