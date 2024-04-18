@@ -1,3 +1,5 @@
+import './UserUpload.css';
+import '../Fonts.css';
 import GmailAuth from "../components/GmailAuth"
 
 const UserUpload = () => {

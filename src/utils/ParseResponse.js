@@ -83,7 +83,7 @@ async function decodeMessages(msgsWithReplies) {
             subCountArr[j] = decodedPart;
             if(j < 1) {
               subArr2[0] = currentMsg.result.snippet;
-              subArr2[1] = currentMsg.result.payload.headers.value;
+              subArr2[1] = currentMsg.result.payload.headers[0].value;
             }
             // console.log(decodedPart);
           }
@@ -98,7 +98,7 @@ async function decodeMessages(msgsWithReplies) {
         MsgsHeaderAndRecipients[counterN] = subArr2;
       }
   }
-  return decodedMsgs, MsgsHeaderAndRecipients;
+  return [decodedMsgs, MsgsHeaderAndRecipients];
   // console.log(decodedMsgs);
   // Flatten to string to display
   // const output = threads.reduce(

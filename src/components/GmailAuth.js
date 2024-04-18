@@ -31,7 +31,8 @@ const GmailAuth = () => {
       // document.getElementById('authorize_button').innerText = 'Refresh';
       let result = await getMessages();
       console.log("done!")
-      console.log(result);
+      console.log(result[0]);
+      console.log(result[1])
     };
 
     if (window.gapi.client.getToken() === null) {
