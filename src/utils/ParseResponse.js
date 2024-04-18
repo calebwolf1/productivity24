@@ -59,9 +59,11 @@ async function getMessagesWithReplies(response) {
 
 async function decodeMessages(msgsWithReplies) {
   let decodedMsgs = [];
+  let MsgsHeaderAndRecipients = [];
   let counterN = 0;
   for(let i = 0; i < msgsWithReplies.length; i++) {
     let subCountArr = [];
+    let subArr2 = [];
     for(let j = 0; j < msgsWithReplies[i].length; j++) {
         let currentMsg = "";
         try {
@@ -79,6 +81,10 @@ async function decodeMessages(msgsWithReplies) {
             }
             let decodedPart = atob( actualPart.replace(/-/g, '+').replace(/_/g, '/') ); 
             subCountArr[j] = decodedPart;
+            if(j < 1) {
+              subArr2[0] = currentMsg.result.snippet;
+              subArr2[1] = currentMsg.result.payload.headers.value;
+            }
             // console.log(decodedPart);
           }
         } catch (err) {
@@ -89,9 +95,10 @@ async function decodeMessages(msgsWithReplies) {
       if(subCountArr) {
         decodedMsgs[counterN] = subCountArr;
         counterN++;
+        MsgsHeaderAndRecipients[counterN] = subArr2;
       }
   }
-  return decodedMsgs;
+  return decodedMsgs, MsgsHeaderAndRecipients;
   // console.log(decodedMsgs);
   // Flatten to string to display
   // const output = threads.reduce(
