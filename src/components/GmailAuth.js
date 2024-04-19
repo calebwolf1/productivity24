@@ -1,8 +1,6 @@
 import { useState, useEffect } from "react";
 import getMessages from "../utils/ParseResponse";
 
-const CLIENT_ID = '411995592943-nvh0sr6o3a95fvhdpj2d8j21vecturb4.apps.googleusercontent.com';
-const API_KEY = 'AIzaSyC2UgmBSO2URNZ5zBrqm-DO85mU2h0Tvd4';
 const DISCOVERY_DOC = 'https://www.googleapis.com/discovery/v1/apis/gmail/v1/rest';
 const SCOPES = 'https://www.googleapis.com/auth/gmail.readonly';
 
@@ -15,7 +13,7 @@ const GmailAuth = () => {
    */
   async function initializeGapiClient() {
     await window.gapi.client.init({
-      apiKey: API_KEY,
+      apiKey: process.env.REACT_APP_GMAIL_API_KEY,
       discoveryDocs: [DISCOVERY_DOC],
     });
   }
@@ -32,7 +30,7 @@ const GmailAuth = () => {
       let result = await getMessages();
       console.log("done!")
       console.log(result[0]);
-      console.log(result[1])
+      console.log(result[1])    
     };
 
     if (window.gapi.client.getToken() === null) {
@@ -57,7 +55,7 @@ const GmailAuth = () => {
   useEffect(() => {
     window.gapi.load('client', initializeGapiClient);
     let tokenClientTemp = window.google.accounts.oauth2.initTokenClient({
-      client_id: CLIENT_ID,
+      client_id: process.env.REACT_APP_CLIENT_ID,
       scope: SCOPES,
       callback: '', // defined later
     });

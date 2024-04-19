@@ -83,7 +83,13 @@ async function decodeMessages(msgsWithReplies) {
             subCountArr[j] = decodedPart;
             if(j < 1) {
               subArr2[0] = currentMsg.result.snippet;
-              subArr2[1] = currentMsg.result.payload.headers[0].value;
+              for(let m = 1; m < currentMsg.result.payload.headers.length; m++) {
+                if(currentMsg.result.payload.headers[m].name === "From") {
+                  subArr2[1] = currentMsg.result.payload.headers[m].value;
+                } else if(currentMsg.result.payload.headers[m].name === "Subject") {
+                  subArr2[2] = currentMsg.result.payload.headers[m].value;
+                }
+              }
             }
             // console.log(decodedPart);
           }
