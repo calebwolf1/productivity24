@@ -15,9 +15,12 @@ def hello():
 
 @app.route('/receive-emails', methods = ['POST'])
 def receive_emails():
+    data = request.json
+    emails = data.get('emails')
+    kb.update_knowledge_base(emails)
     # figure out how to get the emails
     # add emails to the vector store
-    pass
+    return 'True'
 
 @app.route('/generate-response', methods = ['POST'])
 def generate_response():
@@ -28,7 +31,6 @@ def generate_response():
     return kb.generate_response(input_email)
     # get the email from the request
     # query and generate response from vector store
-    pass
 
 
 

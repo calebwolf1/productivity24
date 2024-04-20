@@ -1,5 +1,5 @@
 import nest_asyncio
-from typing import List
+from typing import List, Dict
 
 nest_asyncio.apply()
 from llama_index.core.evaluation import generate_question_context_pairs
@@ -17,7 +17,7 @@ load_dotenv()
 class KnowledgeBase:
     def __init__(self, chunk_size=512):
         print('inside init')
-        documents = JSONReader(is_jsonl = True).load_data("converted_conversations.jsonl")
+        documents = JSONReader(is_jsonl = True).load_data("data/converted_conversations.jsonl")
 
         # define an LLM (3.5 turbo)
         llm = OpenAI(model="gpt-3.5-turbo")
@@ -35,10 +35,12 @@ class KnowledgeBase:
         response_vector = self.query_engine.query(email).response
         return response_vector
     
-    def update_knowledge_base(self, emails:List[List[str]]):
+    def update_knowledge_base(self, emails:List[Dict[str, str]]):
         print('inside update_knowledge_base in KnowledgeBase')
         # assume thread is list of 2 emails
         for thread in emails:
             assert(len(thread)==2)
-            doc = Document(text=(thread[0] + '\n' + thread[1]))
+            doc = Document(text=(thread['incoming'] + '\n' + thread['outgoing']))
             self.vector_index.insert(doc)
+        
+        
