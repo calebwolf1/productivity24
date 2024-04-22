@@ -42,5 +42,6 @@ class KnowledgeBase:
             assert(len(thread)==2)
             doc = Document(text=(thread['incoming'] + '\n' + thread['outgoing']))
             self.vector_index.insert(doc)
-        
+
+# hello
         
