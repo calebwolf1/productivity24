@@ -1,6 +1,6 @@
 import json
 from flask import Flask, jsonify, request
-from knowledge_base import KnowledgeBase
+from .knowledge_base import KnowledgeBase
 app = Flask(__name__)
 kb = KnowledgeBase()
 
