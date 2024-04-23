@@ -4,8 +4,6 @@ from .knowledge_base import KnowledgeBase
 app = Flask(__name__)
 kb = KnowledgeBase()
 
-# vector store
-
 @app.route('/hello', methods = ['GET'])
 def hello():
     phrase = request.args.get('phrase')
