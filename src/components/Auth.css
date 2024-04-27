@@ -13,21 +13,15 @@
     line-height: normal;
 }
 
-.orgtextfield{
+.emailtextfield{
     position: absolute;
     top: 265px;
     left: 840px;
 }
 
-.emailtextfield{
-    position: absolute;
-    top: 385px;
-    left: 840px;
-}
-
 .passwordtextfield{
     position: absolute;
-    top: 505px;
+    top: 385px;
     left: 840px;
 }
 
@@ -40,21 +34,15 @@
     line-height: normal;
 }
 
-.orgtext{
+.emailtext{
     position: absolute;
     top: 240px;
     left: 840px;
 }
 
-.emailtext{
-    position: absolute;
-    top: 360px;
-    left: 840px;
-}
-
 .passwordtext{
     position: absolute;
-    top: 480px;
+    top: 360px;
     left: 840px;
 }
 
@@ -67,8 +55,8 @@
     line-height: normal;
 
     position: absolute;
-    top: 655px;
-    left: 965px;
+    top: 550px;
+    left: 1015px;
     text-align: center
 }
 
@@ -87,6 +75,6 @@
     line-height: normal;
 
     position: absolute;
-    top: 600px;
+    top: 475px;
     left: 840px;
 }

@@ -1,5 +1,7 @@
 import { useState, useEffect } from "react";
 import getMessages from "../utils/ParseResponse";
+import './GmailAuth.css';
+import '../Fonts.css';
 
 const DISCOVERY_DOC = 'https://www.googleapis.com/discovery/v1/apis/gmail/v1/rest';
 const SCOPES = 'https://www.googleapis.com/auth/gmail.readonly';
@@ -30,7 +32,7 @@ const GmailAuth = () => {
       let result = await getMessages();
       console.log("done!")
       console.log(result[0]);
-      console.log(result[1])    
+      console.log(result[1])
     };
 
     if (window.gapi.client.getToken() === null) {
@@ -42,6 +44,7 @@ const GmailAuth = () => {
       // Skip display of account chooser and consent dialog for an existing session.
       tokenClient.requestAccessToken({prompt: ''});
     }
+    window.location.href='/userUpload';
   }
 
   function handleSignoutClick() {
@@ -64,8 +67,8 @@ const GmailAuth = () => {
 
   return (
     <>
-    <button onClick={handleAuthClick}>Authorize</button>
-    <button onClick={handleSignoutClick}>Sign Out</button>
+    <button onClick={handleAuthClick} className="authbutton">Sign in with Google</button>
+    {/* <button onClick={handleSignoutClick}>Sign Out</button> */}
     </>
   )
 };

@@ -121,10 +121,10 @@ const Auth = () => {
     <div>
       <div>
         {/* TODO: Have a dropdown that lists all organizations matching the current pattern typed */}
-        <div className="gentext orgtext">Organization Name</div>
+        {/* <div className="gentext orgtext">Organization Name</div>
         <input className="textfield orgtextfield"
           //placeholder="Organization name"
-          onChange={(e) => setClientName(e.target.value)} />
+          onChange={(e) => setClientName(e.target.value)} /> */}
         {/* <button onClick={onSelectClient}>Select your organization</button> */}
       </div>
       {/* <div>
@@ -156,7 +156,7 @@ const Auth = () => {
           type="password"
           onChange={(e) => setSignInPassword(e.target.value)} />
         <button onClick={onSignIn} className="loginbutton">Login</button>
-        <div className="forgotpassword">Forgot password</div>
+        <div className="forgotpassword">OR</div>
       </div>
     </div>
   );
