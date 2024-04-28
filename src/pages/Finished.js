@@ -6,7 +6,7 @@ const Finished = () => {
     return (
         <div>
             <div className="ready">You're ready to Whoosh!</div>
-            <img src={Logo} alt="Logo" className='logo'/>;
+            <img src={Logo} alt="Logo" className='logobig'/>;
         </div>
     );
 }
