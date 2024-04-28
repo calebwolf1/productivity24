@@ -2,12 +2,15 @@ import { useState, useEffect } from "react";
 import getMessages from "../utils/ParseResponse";
 import './GmailAuth.css';
 import '../Fonts.css';
+import { useNavigate } from 'react-router-dom';
+
 
 const DISCOVERY_DOC = 'https://www.googleapis.com/discovery/v1/apis/gmail/v1/rest';
 const SCOPES = 'https://www.googleapis.com/auth/gmail.readonly';
 
 const GmailAuth = () => {
   const [tokenClient, setTokenClient] = useState(null);
+  const navigate = useNavigate();
 
   /**
    * Callback after the API client is loaded. Loads the
@@ -23,17 +26,7 @@ const GmailAuth = () => {
   function handleAuthClick() {
     console.log(tokenClient);
     // make sure tokenClient is not used after this function
-    tokenClient.callback = async (resp) => {
-      if (resp.error !== undefined) {
-        throw (resp);
-      }
-      // document.getElementById('signout_button').style.visibility = 'visible';
-      // document.getElementById('authorize_button').innerText = 'Refresh';
-      let result = await getMessages();
-      console.log("done!")
-      console.log(result[0]);
-      console.log(result[1])
-    };
+    
 
     if (window.gapi.client.getToken() === null) {
       // Prompt the user to select a Google Account and ask for consent to share their data
@@ -44,7 +37,7 @@ const GmailAuth = () => {
       // Skip display of account chooser and consent dialog for an existing session.
       tokenClient.requestAccessToken({prompt: ''});
     }
-    window.location.href='/userUpload';
+    
   }
 
   function handleSignoutClick() {
@@ -62,6 +55,21 @@ const GmailAuth = () => {
       scope: SCOPES,
       callback: '', // defined later
     });
+    tokenClientTemp.callback = async (resp) => {
+      if (resp.error !== undefined) {
+        throw (resp);
+      } else {
+        // window.location.href='/userUpload';
+        navigate('/userUpload');
+        // console.log(await getMessages());
+      }
+      // document.getElementById('signout_button').style.visibility = 'visible';
+      // document.getElementById('authorize_button').innerText = 'Refresh';
+      // let result = await getMessages();
+      // console.log("done!")
+      // console.log(result[0]);
+      // console.log(result[1])
+    };
     setTokenClient(tokenClientTemp);
   }, []);
 
