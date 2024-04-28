@@ -1,3 +1,181 @@
-.message{
-  color: white
+.glow{
+  width: 1320px;
+  height: 600px;
+  flex-shrink: 0;
+
+  background: linear-gradient(180deg, #4C68FC 0%, #4C1CD4 100%);
+  filter: blur(25px);
+
+  position: absolute;
+  top: 210px;
+  
+  position: relative;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.gentext{
+  color: #F0F0F0;
+  font-family: "Space Grotesk";
+  font-size: 24px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+}
+
+.nametext{
+  position: absolute;
+  top: 50px;
+  left: 110px;
+}
+
+.bigtext{
+  color: #F0F0F0;
+  font-family: Inter;
+  font-size: 36px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 150%; /* 54px */
+  letter-spacing: 0.18px;
+}
+
+.teamtext{
+  position: absolute;
+  top: 90px;
+  left: 110px;
+}
+
+.smalltext{
+  color: #F0F0F0;
+  font-family: Inter;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 150%; /* 24px */
+  letter-spacing: 0.08px;
+}
+
+.lighttext{
+  font-family: Inter;
+  color: #737373;
+}
+
+.employeetext{
+  position: absolute;
+  top: 145px;
+  left: 110px;
+}
+
+.emailheader{
+  position: absolute;
+  top: -380px;
+
+  width: 1300px;
+  height: 60px;
+  flex-shrink: 0;
+
+  border-radius: 15px 15px 0px 0px;
+  background: #0F0E10;
+  
+  position: relative;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.indivemail{
+  width: 1300px;
+  height: 50px;
+  flex-shrink: 0;
+}
+
+.color1{
+  background: #1B1A1C;
+}
+
+.color2{
+  background: #0F0E10;
+}
+
+.email{
+  position: absolute;
+  top: -380px;
+
+  position: relative;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.emailsender{
+  position: absolute;
+  top: 15px;
+  left: 100px;
+}
+
+.emailsubject{
+  position: absolute;
+  top: 15px;
+  left: 275px;
+}
+
+.emailtext{
+  position: absolute;
+  top: 16px;
+  left: 450px;
+}
+
+.uploadbutton{
+  border-radius: 30px;
+  background: #4C1CD4;
+  width: 100px;
+  height: 40px;
+  flex-shrink: 0;
+
+  position: absolute;
+  top: 10px;
+  left: 1150px;
+}
+
+.uploadtext{
+  color: #F0F0F0;
+  font-family: "Space Grotesk";
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+
+  position: absolute;
+  top: 17px;
+  left: 1165px;
+}
+
+.emailnumber{
+  color: #FFF;
+  font-family: Inter;
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+
+  position: absolute;
+  top: 19px;
+  left: 1100px;
+}
+
+.colordot{
+  width: 10px;
+  height: 10px;
+  flex-shrink: 0;
+
+  border-radius: 90px;
+  background: #4C1CD4;
+
+  position: absolute;
+  top: 27px;
+  left: 1080px;
+}
+
+.icon{
+  position: absolute;
+  top: 15px;
+  left: 50px;
 }
