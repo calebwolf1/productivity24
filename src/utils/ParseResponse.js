@@ -17,9 +17,12 @@ async function getResponse() {
       maxResults: 30
     })
   } catch (err) {
-    document.getElementById('content').innerText = err.message;
+    // document.getElementById('content').innerText = err.message;
+    console.error(err);
     return;
   }
+  // console.log("RESPONSE");
+  // console.log(response);
   return response;
 }
 
@@ -61,6 +64,7 @@ async function decodeMessages(msgsWithReplies) {
   let decodedMsgs = [];
   let MsgsHeaderAndRecipients = [];
   let counterN = 0;
+  console.log(msgsWithReplies);
   for(let i = 0; i < msgsWithReplies.length; i++) {
     let subCountArr = [];
     let subArr2 = [];
@@ -71,30 +75,47 @@ async function decodeMessages(msgsWithReplies) {
             userId: 'me',
             id: msgsWithReplies[i][j]["id"]
           });
-          var parts = currentMsg.result.payload.parts;
-          var actualPart;
-          if(parts) {
-            for(let k = 0; k < parts.length; k++) {
-            if(parts[k]["mimeType"] == 'text/plain') {
-              actualPart = parts[k]["body"]["data"];
+          console.log(currentMsg);
+          let body = extractBody(currentMsg.result);
+          console.log(body);
+          subCountArr.push(body);
+
+          if(j < 1) {
+            subArr2[0] = currentMsg.result.snippet;
+            for(let m = 1; m < currentMsg.result.payload.headers.length; m++) {
+              if(currentMsg.result.payload.headers[m].name === "From") {
+                subArr2[1] = currentMsg.result.payload.headers[m].value;
+              } else if(currentMsg.result.payload.headers[m].name === "Subject") {
+                subArr2[2] = currentMsg.result.payload.headers[m].value;
               }
             }
-            let decodedPart = atob( actualPart.replace(/-/g, '+').replace(/_/g, '/') ); 
-            subCountArr[j] = decodedPart;
-            if(j < 1) {
-              subArr2[0] = currentMsg.result.snippet;
-              for(let m = 1; m < currentMsg.result.payload.headers.length; m++) {
-                if(currentMsg.result.payload.headers[m].name === "From") {
-                  subArr2[1] = currentMsg.result.payload.headers[m].value;
-                } else if(currentMsg.result.payload.headers[m].name === "Subject") {
-                  subArr2[2] = currentMsg.result.payload.headers[m].value;
-                }
-              }
-            }
-            // console.log(decodedPart);
           }
+          // var parts = currentMsg.result.payload.parts;
+          // console.log(parts.length);
+          // var actualPart;
+          // if(parts) {
+          //   for(let k = 0; k < parts.length; k++) {
+          //     if(parts[k]["mimeType"] == 'text/plain') {
+          //       actualPart = parts[k]["body"]["data"];
+          //     }
+          //   }
+          //   let decodedPart = atob( actualPart.replace(/-/g, '+').replace(/_/g, '/') ); 
+          //   subCountArr[j] = decodedPart;
+          //   if(j < 1) {
+          //     subArr2[0] = currentMsg.result.snippet;
+          //     for(let m = 1; m < currentMsg.result.payload.headers.length; m++) {
+          //       if(currentMsg.result.payload.headers[m].name === "From") {
+          //         subArr2[1] = currentMsg.result.payload.headers[m].value;
+          //       } else if(currentMsg.result.payload.headers[m].name === "Subject") {
+          //         subArr2[2] = currentMsg.result.payload.headers[m].value;
+          //       }
+          //     }
+          //   }
+          //   // console.log(decodedPart);
+          // }
         } catch (err) {
-            document.getElementById('content').innerText = err.message;
+            // document.getElementById('content').innerText = err.message;
+            console.error(err);
             return;
         }
       }
@@ -111,6 +132,23 @@ async function decodeMessages(msgsWithReplies) {
   //     (str, threads) => `${str}${threads.id}\n`,
   //     'Messages:\n');
   // document.getElementById('content').innerText = output;
+}
+
+function extractBody(message) {
+  var parts = [message.payload];
+
+  while (parts.length) {
+    var part = parts.shift();
+    if (part.parts) {
+      parts = parts.concat(part.parts);
+    }
+
+    if(part.mimeType === 'text/plain') {
+      let decodedPart = atob( part.body.data.replace(/-/g, '+').replace(/_/g, '/') )
+      // console.log(decodedPart);
+      return decodedPart;
+    }
+  }
 }
 
 export default getMessages;
