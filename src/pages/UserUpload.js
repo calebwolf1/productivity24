@@ -27,7 +27,7 @@ const UserUpload = () => {
   }, []);
 
   const [currentImage, setCurrentImage] = useState(1);
-  const [currentImages, setCurrentImages] = useState(Array(10).fill(1));
+  const [currentImages, setCurrentImages] = useState(Array(12).fill(1));
 
   // Function to handle image click and switch to the next image
   const handleClick = (index) => {
@@ -42,7 +42,7 @@ const UserUpload = () => {
     <div>
       <div className="glow"></div>
       <div className="gentext nametext">Hello, Allison</div>
-      <div className="bigtext teamtext">IT Tech Team</div>
+      <div className="bigtext teamtext">Sales Team</div>
       <div className="smalltext employeetext">32 Employees</div>
       <div className="emailheader">
         <div className="uploadbutton" onClick={() => {navigate('/finished')}}></div>
@@ -157,6 +157,28 @@ const UserUpload = () => {
           src={currentImages[9] === 1 ? CheckedIcon : UncheckedIcon}
           alt="Switchable Image"
           onClick={() => {handleClick(9)}}
+          className="icon"
+        />
+      </div>
+      <div className="indivemail color1 email">
+        <div className="smalltext emailsender">Tania Mack</div>
+        <div className="smalltext emailsubject">Expedited Delivery</div>
+        <div className="lighttext emailtext">I need to purchase a mobile phone from your website, and I was wondering if there is an option for exped...</div>
+        <img
+          src={currentImages[10] === 1 ? CheckedIcon : UncheckedIcon}
+          alt="Switchable Image"
+          onClick={() => {handleClick(10)}}
+          className="icon"
+        />
+      </div>
+      <div className="indivemail color2 email">
+        <div className="smalltext emailsender">Karen Moran</div>
+        <div className="smalltext emailsubject">Microwave problem</div>
+        <div className="lighttext emailtext">My order number is BB123456. I ordered a microwave and it's not working like how it's supposed to. I wan...</div>
+        <img
+          src={currentImages[11] === 1 ? CheckedIcon : UncheckedIcon}
+          alt="Switchable Image"
+          onClick={() => {handleClick(11)}}
           className="icon"
         />
       </div>
