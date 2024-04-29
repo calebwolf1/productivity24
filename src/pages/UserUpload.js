@@ -42,7 +42,7 @@ const UserUpload = () => {
     <div>
       <div className="glow"></div>
       <div className="gentext nametext">Hello, Allison</div>
-      <div className="bigtext teamtext">Sales Team</div>
+      <div className="bigtext teamtext">Customer Support</div>
       <div className="smalltext employeetext">32 Employees</div>
       <div className="emailheader">
         <div className="uploadbutton" onClick={() => {navigate('/finished')}}></div>
