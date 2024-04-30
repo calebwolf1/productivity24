@@ -73,7 +73,7 @@ Utilizes Gmail authorization to link to the authorized user's Gmail account (via
 
 Visualizes the user's real-time Gmail inbox and allows them to select/deselect emails to use as context for the response generation.
 
-## Apps Scrpt
+## Apps Script
 
 ### Code.gs
 
@@ -150,7 +150,7 @@ This section has moved here: [https://facebook.github.io/create-react-app/docs/d
 
 This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
 
-### Contact
+### Team
 - Tech Team: Caleb Wolf, Isobel Bodefeld, Jasmine Ball, Kavan Mehta
 - Product Team: Ishita Jain, Nishika Mudda
 - Design Team: Allison Cheng, Briona Dommert
