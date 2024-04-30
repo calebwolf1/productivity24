@@ -10,7 +10,11 @@ Whoosh is an AI-powered Gmail add-on that streamlines employee-to-client communi
 
 **How:** 
 - **(Email Upload)** When invited users visit our webpage, they can select which of their own emails they want to upload. These are stored directly into our knowledge base. 
-- **(Gmail Add-on)** Users can simply click on any Gmail message, click on the Whoosh icon, and click generate to get a auto-generated tailored response that's ready to edit and send to clients. 
+- **(Gmail Add-on)** Users can simply click on any Gmail message, click on the Whoosh icon, and click generate to get a auto-generated tailored response that's ready to edit and send to clients.
+
+
+https://github.com/calebwolf1/productivity24/assets/143769781/b442ee67-5a0d-4219-b5f3-630924803ced
+
 
 **Tech:** We use the RAG (Retrieval-Augmented Generation) methodology to implement our product. This optimizes the output of our LLM (gpt-3.5-turbo) by visiting a knowledge base (Llama Index vector database) of the uploaded data. In the context of our product, when the user clicks the add-on's generate button below an email, we send a request to our Llama Index database to retrieve responses to past emails most similar to the one the user is currently replying to. We augment these responses as context for the GPT LLM to generate a tailored response.
 
