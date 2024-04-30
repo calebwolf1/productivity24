@@ -10,7 +10,11 @@ Whoosh is an AI-powered Gmail add-on that streamlines employee-to-client communi
 
 **How:** 
 - **(Email Upload)** When invited users visit our webpage, they can select which of their own emails they want to upload. These are stored directly into our knowledge base. 
-- **(Gmail Add-on)** Users can simply click on any Gmail message, click on the Whoosh icon, and click generate to get a auto-generated tailored response that's ready to edit and send to clients. 
+- **(Gmail Add-on)** Users can simply click on any Gmail message, click on the Whoosh icon, and click generate to get a auto-generated tailored response that's ready to edit and send to clients.
+
+
+https://github.com/calebwolf1/productivity24/assets/143769781/b442ee67-5a0d-4219-b5f3-630924803ced
+
 
 
 
