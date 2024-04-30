@@ -71,6 +71,12 @@ Utilizes Gmail authorization to link to the authorized user's Gmail account (via
 
 Visualizes the user's real-time Gmail inbox and allows them to select/deselect emails to use as context for the response generation.
 
+## Apps Scrpt
+
+### Code.gs
+
+Contains all of the codebase for the Gmail Add-on. Builds the easy-to-use UI for our Gmail Add-on using Google's CardService class and functions. Reads the current email message in the thread and creates a tailored response in milliseconds by fetching a response with a request to our Llama Index Vectorbase through a Heroku-hosted server.
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
