@@ -20,6 +20,8 @@ https://github.com/calebwolf1/productivity24/assets/143769781/b442ee67-5a0d-4219
 
 **Tech:** We use the RAG (Retrieval-Augmented Generation) methodology to implement our product. This optimizes the output of our LLM (gpt-3.5-turbo) by visiting a knowledge base (Llama Index vector database) of the uploaded data. In the context of our product, when the user clicks the add-on's generate button below an email, we send a request to our Llama Index database to retrieve responses to past emails most similar to the one the user is currently replying to. We augment these responses as context for the GPT LLM to generate a tailored response.
 
+To enhance user experience, our front-end is built using React to create an interactive user interfaces. Additionally, we leverage Google App Scripts to seamlessly integrate our solution into Gmail as an Add-on. This integration allows us to embed our backend directly within the user's email workflow, enabling instantaneous and context-aware responses with just a click.
+
 ## data
 
 ### converted_conversation.jsonl
