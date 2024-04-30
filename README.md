@@ -41,6 +41,20 @@ Utilized Llama Index to implement the RAG technique. Uses 'converted_conversatio
 - Each email thread passed to this method should contain exactly two emails (incoming and outgoing).
 - Converts each email thread into a Document and inserts it into the vector store index.
 
+### app.py
+
+An instance of 'Flask' is created, and a 'KnowledgeBase' object is initialized using 'knowledge_base.py'.
+
+1. Receive Emails Endpoint
+- Endpoint: /receive-emails
+- Method: POST
+- Description: Accepts a JSON payload with emails, updates the knowledge base using these emails, and returns a confirmation. This endpoint is critical for populating the knowledge base with data.
+
+2. Generate Response Endpoint
+- Endpoint: /generate-response
+- Method: POST
+- Description: Takes an input email from the request and uses the knowledge base to generate a response based on this input. This demonstrates how the knowledge base can be queried to provide intelligent responses.
+
 ### App.js
 
 Set up navigation routes to allow users to visit and intereact with our website.
@@ -56,20 +70,6 @@ Utilizes Gmail authorization to link to the authorized user's Gmail account (via
 ### UserUpload.js
 
 Visualizes the user's real-time Gmail inbox and allows them to select/deselect emails to use as context for the response generation.
-
-### app.py
-
-An instance of 'Flask' is created, and a 'KnowledgeBase' object is initialized using 'knowledge_base.py'.
-
-1. Receive Emails Endpoint
-- Endpoint: /receive-emails
-- Method: POST
-- Description: Accepts a JSON payload with emails, updates the knowledge base using these emails, and returns a confirmation. This endpoint is critical for populating the knowledge base with data.
-
-2. Generate Response Endpoint
-- Endpoint: /generate-response
-- Method: POST
-- Description: Takes an input email from the request and uses the knowledge base to generate a response based on this input. This demonstrates how the knowledge base can be queried to provide intelligent responses.
 
 # Getting Started with Create React App
 
