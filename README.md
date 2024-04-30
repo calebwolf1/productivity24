@@ -4,15 +4,31 @@ Whoosh is an AI-powered Gmail add-on that streamlines employee-to-client communi
 
 ## In a nutshell
 
-Our mission: Empowering professionals by removing the mundane task of replying to emails. Because time is valuable.
+**Our mission:** Empowering professionals by removing the mundane task of replying to emails. Because time is valuable.
 
-Target Audience: (B2B) 1,500 mid-sized companies in Austin, TX. For client-facing professionals in sales, IT, customer support, etc.
+**Target Audience:** (B2B) 1,500 mid-sized companies in Austin, TX. For client-facing professionals in sales, IT, customer support, etc.
 
-How: 
+**How:** 
 - **(Email Upload)** When invited users visit our webpage, they can select which of their own emails they want to upload. These are stored directly into our knowledge base. 
 - **(Gmail Add-on)** Users can simply click on any Gmail message, click on the Whoosh icon, and click generate to get a auto-generated tailored response that's ready to edit and send to clients. 
 
-Tech: We use the RAG (Retrieval-Augmented Generation) methodology to implement our product. This optimizes the output of our LLM (gpt-3.5-turbo) by visiting a knowledge base (Llama Index vector database) of the uploaded data. In the context of our product, when the user clicks the add-on's generate button below an email, we send a request to our Llama Index database to retrieve responses to past emails most similar to the one the user is currently replying to. We augment these responses as context for the GPT LLM to generate a tailored response.
+**Tech:** We use the RAG (Retrieval-Augmented Generation) methodology to implement our product. This optimizes the output of our LLM (gpt-3.5-turbo) by visiting a knowledge base (Llama Index vector database) of the uploaded data. In the context of our product, when the user clicks the add-on's generate button below an email, we send a request to our Llama Index database to retrieve responses to past emails most similar to the one the user is currently replying to. We augment these responses as context for the GPT LLM to generate a tailored response.
+
+## data
+
+### converted_conversation.jsonl
+
+We restructured the Data E-Commerce Customer Support Conversations (source: https://huggingface.co/datasets/NebulaByte/E-Commerce_Customer_Support_Conversations) for our purposes. This involved using only the 'conversation' column to obtain back-and-forth conversations between agent and customer then splitting the conversations based on role. This was stored as a JSON Lines file.
+
+## flask_app
+
+### knowledge_base.py
+
+Utilized Llama Index to implement the RAG technique. Uses 'converted_conversations.jsonl' as the data stored in the vector database. This file has 2 main purposes:
+1. generate response
+2. update knowledge base
+
+### app.py
 
 # Getting Started with Create React App
 
@@ -84,3 +100,8 @@ This section has moved here: [https://facebook.github.io/create-react-app/docs/d
 ### `npm run build` fails to minify
 
 This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+
+### Contact
+- Tech Team: Caleb Wolf, Isobel Bodefeld, Jasmine Ball, Kavan Mehta
+- Product Team: Ishita Jain, Nishika Mudda
+- Design Team: Allison Cheng, Briona Dommert
