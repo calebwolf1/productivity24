@@ -10,7 +10,7 @@ Whoosh is an AI-powered Gmail add-on that streamlines employee-to-client communi
 
 **How:** 
 - **(Email Upload)** When invited users visit our webpage, they can select which of their own emails they want to upload. These are stored directly into our knowledge base. 
-- **(Gmail Add-on)** Users can simply click on any Gmail message, click on the Whoosh icon, and click generate to get a auto-generated tailored response that's ready to edit and send to clients. 
+- **(Gmail Add-on)** Users can simply click on any Gmail message, click on the Whoosh icon, and click generate to get an auto-generated tailored response that's ready to edit and send to clients. This response will load directly into a new email draft within Gmail, without need for external navigation.
 
 **Tech:** We use the RAG (Retrieval-Augmented Generation) methodology to implement our product. This optimizes the output of our LLM (gpt-3.5-turbo) by visiting a knowledge base (Llama Index vector database) of the uploaded data. In the context of our product, when the user clicks the add-on's generate button below an email, we send a request to our Llama Index database to retrieve responses to past emails most similar to the one the user is currently replying to. We augment these responses as context for the GPT LLM to generate a tailored response.
 
@@ -27,6 +27,22 @@ We restructured the Data E-Commerce Customer Support Conversations (source: http
 Utilized Llama Index to implement the RAG technique. Uses 'converted_conversations.jsonl' as the data stored in the vector database. This file has 2 main purposes:
 1. generate response
 2. update knowledge base
+
+### App.js
+
+Set up navigation routes to allow users to visit and intereact with our website.
+
+### Home.js
+
+Landing page, gives basic overview of project and allows navigation to login page
+
+### Login.js
+
+Utilizes Gmail authorization to link to the authorized user's Gmail account (via Google's sign-in interface) and retrieve emails from their inbox.
+
+### UserUpload.js
+
+Visualizes the user's real-time Gmail inbox and allows them to select/deselect emails to use as context for the response generation.
 
 ### app.py
 
