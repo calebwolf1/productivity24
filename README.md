@@ -1,4 +1,4 @@
-# Whoosh, send confidently.
+# Whoosh, send confidently. 
 
 Whoosh is an AI-powered Gmail add-on that streamlines employee-to-client communication by generating tailored email responses.
 
@@ -12,6 +12,12 @@ Whoosh is an AI-powered Gmail add-on that streamlines employee-to-client communi
 - **(Email Upload)** When invited users visit our webpage, they can select which of their own emails they want to upload. These are stored directly into our knowledge base. 
 - **(Gmail Add-on)** Users can simply click on any Gmail message, click on the Whoosh icon, and click generate to get an auto-generated tailored response that's ready to edit and send to clients. This response will load directly into a new email draft within Gmail, without need for external navigation.
 
+
+https://github.com/calebwolf1/productivity24/assets/143769781/b442ee67-5a0d-4219-b5f3-630924803ced
+
+
+
+
 **Tech:** We use the RAG (Retrieval-Augmented Generation) methodology to implement our product. This optimizes the output of our LLM (gpt-3.5-turbo) by visiting a knowledge base (Llama Index vector database) of the uploaded data. In the context of our product, when the user clicks the add-on's generate button below an email, we send a request to our Llama Index database to retrieve responses to past emails most similar to the one the user is currently replying to. We augment these responses as context for the GPT LLM to generate a tailored response.
 
 ## data
@@ -24,9 +30,16 @@ We restructured the Data E-Commerce Customer Support Conversations (source: http
 
 ### knowledge_base.py
 
-Utilized Llama Index to implement the RAG technique. Uses 'converted_conversations.jsonl' as the data stored in the vector database. This file has 2 main purposes:
+Utilized Llama Index to implement the RAG technique. Uses 'converted_conversations.jsonl' as the data stored in the vector database. This file contains the logic for 2 main purposes:
+
 1. generate response
-2. update knowledge base
+- Generates a response to an input email string.
+- Queries the vector store with the provided email to get a response based on the closest documents in the vector space.
+- Returns the response from the query engine.
+2. update knowledge base: 
+- Updates the knowledge base with new emails.
+- Each email thread passed to this method should contain exactly two emails (incoming and outgoing).
+- Converts each email thread into a Document and inserts it into the vector store index.
 
 ### App.js
 
@@ -45,6 +58,18 @@ Utilizes Gmail authorization to link to the authorized user's Gmail account (via
 Visualizes the user's real-time Gmail inbox and allows them to select/deselect emails to use as context for the response generation.
 
 ### app.py
+
+An instance of 'Flask' is created, and a 'KnowledgeBase' object is initialized using 'knowledge_base.py'.
+
+1. Receive Emails Endpoint
+- Endpoint: /receive-emails
+- Method: POST
+- Description: Accepts a JSON payload with emails, updates the knowledge base using these emails, and returns a confirmation. This endpoint is critical for populating the knowledge base with data.
+
+2. Generate Response Endpoint
+- Endpoint: /generate-response
+- Method: POST
+- Description: Takes an input email from the request and uses the knowledge base to generate a response based on this input. This demonstrates how the knowledge base can be queried to provide intelligent responses.
 
 # Getting Started with Create React App
 
