@@ -24,11 +24,30 @@ We restructured the Data E-Commerce Customer Support Conversations (source: http
 
 ### knowledge_base.py
 
-Utilized Llama Index to implement the RAG technique. Uses 'converted_conversations.jsonl' as the data stored in the vector database. This file has 2 main purposes:
+Utilized Llama Index to implement the RAG technique. Uses 'converted_conversations.jsonl' as the data stored in the vector database. This file contains the logic for 2 main purposes:
+
 1. generate response
-2. update knowledge base
+- Generates a response to an input email string.
+- Queries the vector store with the provided email to get a response based on the closest documents in the vector space.
+- Returns the response from the query engine.
+2. update knowledge base: 
+- Updates the knowledge base with new emails.
+- Each email thread passed to this method should contain exactly two emails (incoming and outgoing).
+- Converts each email thread into a Document and inserts it into the vector store index.
 
 ### app.py
+
+An instance of 'Flask' is created, and a 'KnowledgeBase' object is initialized using 'knowledge_base.py'.
+
+1. Receive Emails Endpoint
+- Endpoint: /receive-emails
+- Method: POST
+- Description: Accepts a JSON payload with emails, updates the knowledge base using these emails, and returns a confirmation. This endpoint is critical for populating the knowledge base with data.
+
+2. Generate Response Endpoint
+- Endpoint: /generate-response
+- Method: POST
+- Description: Takes an input email from the request and uses the knowledge base to generate a response based on this input. This demonstrates how the knowledge base can be queried to provide intelligent responses.
 
 # Getting Started with Create React App
 
