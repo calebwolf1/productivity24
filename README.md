@@ -1,4 +1,4 @@
-# Whoosh, send confidently.
+# Whoosh, send confidently. :e-mail:
 
 Whoosh is an AI-powered Gmail add-on that streamlines employee-to-client communication by generating tailored email responses.
 
